@@ -21,7 +21,7 @@ public class AddressBookOperations implements AddressBookInterface {
 	}
 
 	static final int ZERO = 0, ONE = 1, TWO = 2;
-
+// address book operations
 	@Override
 	public AddressBookContactDetails newAddressBook() {
 		AddressBookContactDetails newAddressBook = new AddressBookContactDetails();
