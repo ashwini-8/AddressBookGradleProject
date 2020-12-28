@@ -73,19 +73,6 @@ public class AddressBookOperations implements AddressBookInterface {
 	}
 
 	@Override
-	public void deleteAddress(long key) {
-
-		if (addressBookContainer.containsKey(key) == false) {
-			System.out.println("Invalid Key !!!!!!!");
-		} else {
-			addressBookContainer.remove(key);
-			System.out.println(key + " Deleted Successfully");
-
-		}
-
-	}
-
-	@Override
 	public void sortByfirstName() {
 		List<AddressBookContactDetails> value = new ArrayList<>();
 		if (addressBookContainer != null) {
@@ -100,7 +87,19 @@ public class AddressBookOperations implements AddressBookInterface {
 			System.out.println(valueList);
 		}
 	}
+	
+	@Override
+	public void deleteAddress(long key) {
 
+		if (addressBookContainer.containsKey(key) == false) {
+			System.out.println("Invalid Key !!!!!!!");
+		} else {
+			addressBookContainer.remove(key);
+			System.out.println(key + " Deleted Successfully");
+
+		}
+	}
+	
 	@Override
 	public void sortByZipCode() {
 
@@ -137,8 +136,8 @@ public class AddressBookOperations implements AddressBookInterface {
 			break;
 		}
 	}
-	public void searchByState(String inputState, AddressBookContactDetails addressBook) {
 	
+	public void searchByState(String inputState, AddressBookContactDetails addressBook) {
 	Set keys = addressBookContainer.keySet();
 	Iterator iterate = keys.iterator();
 	Collection<AddressBookContactDetails> getValues = addressBookContainer.values();
